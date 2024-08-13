@@ -1,61 +1,60 @@
+/* styles.css */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f0f0f0;
 }
 
-.container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+.carousel {
+    position: relative;
+    width: 70%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    text-align: center;
-    color: #2a5298;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-select, input, button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.button-group {
+.carousel-inner {
     display: flex;
-    justify-content: space-between;
+    transition: transform 0.5s ease;
 }
 
-.operation {
-    width: 48%;
-    background-color: #2a5298;
-    color: white;
-    cursor: pointer;
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
 }
 
-.operation:hover {
-    background-color: #1e3c72;
+.carousel-item img {
+    width: 100%;
+    display: block;
 }
 
 button {
-    background-color: #2a5298;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    border: none;
+    padding: 10px;
     cursor: pointer;
+    border-radius: 50%;
+    z-index: 1000;
 }
 
 button:hover {
-    background-color: #1e3c72;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
