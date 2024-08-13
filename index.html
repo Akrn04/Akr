@@ -3,33 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini App</title>
+    <title>Image Carousel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Page1</h1>
-        <div>
-            <label for="currency">Choose currency:</label>
-            <select id="currency">
-                <option value="paysera">Paysera</option>
-                <option value="wise">Wise</option>
-                <option value="perfect-money">Perfect Money</option>
-            </select>
-        </div>
-        <div>
-            <label>Select operation:</label>
-            <div class="button-group">
-                <button id="buy" class="operation">Buy</button>
-                <button id="sell" class="operation">Sell</button>
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image1.jpg" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="image3.jpg" alt="Image 3">
             </div>
         </div>
-        <div>
-            <label for="amount">Enter amount:</label>
-            <input type="number" id="amount" min="15">
-        </div>
-        <button id="next">Next</button>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
     </div>
-    <script src="app.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
