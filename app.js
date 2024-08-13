@@ -1,15 +1,19 @@
-document.getElementById('next').addEventListener('click', () => {
-    const amount = document.getElementById('amount').value;
-    if (amount < 15) {
-        alert('Amount must be at least 15');
-    } else {
-        alert('Proceeding to the next step');
-    }
-});
+// script.js
+let currentIndex = 0;
 
-document.querySelectorAll('.operation').forEach(button => {
-    button.addEventListener('click', () => {
-        document.querySelectorAll('.operation').forEach(btn => btn.style.backgroundColor = '#2a5298');
-        button.style.backgroundColor = '#1e3c72';
-    });
-});
+function moveCarousel(direction) {
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+
+    items[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + direction + totalItems) % totalItems;
+    items[currentIndex].classList.add('active');
+
+    const offset = -currentIndex * 100;
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+}
+
+// Automatically move carousel every 3 seconds
+setInterval(() => {
+    moveCarousel(1);
+}, 3000);
